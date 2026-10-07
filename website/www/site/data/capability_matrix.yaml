@@ -374,8 +374,8 @@ capability-matrix:
               l3:
             - class: spark-dataset
               l1: "Partially"
-              l2: full support in batch mode
-              l3:
+              l2: batch mode, non-merging windows
+              l3: "State is supported in batch mode for non-merging windows, and requires Spark 3.4+. Every state type is available, as the state of the key being processed is held on the heap. OnWindowExpiration is not yet supported."
             - class: jet
               l1: "Partially"
               l2: non-merging windows
@@ -1352,8 +1352,8 @@ capability-matrix:
               l3: ""
             - class: spark-dataset
               l1: "Partially"
-              l2: fully supported in batch mode
-              l3: ""
+              l2: batch mode, non-merging windows
+              l3: "Event-time and processing-time timers are supported in batch mode for non-merging windows, and require Spark 3.4+. As in other batch runners, the timers of a key fire once its input is exhausted, with both clocks advanced to the end of time."
             - class: jet
               l1: "Partially"
               l2: non-merging windows
